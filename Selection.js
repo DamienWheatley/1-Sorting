@@ -1,9 +1,27 @@
-let input = [5,3,2,1,6,8,4,7,8];
+let inputArray = [5,3,2,1,6,8,4,7,2,8,14,82];
 
-console.log("UNSORTED: " + input);
+console.log("UNSORTED: " + inputArray);
 
-function selectionSort (input) {
-    moveSmallestInteger(input);        
+function selectionSort (inputArray) {
+    moveSmallestInteger(inputArray);        
+};
+
+function moveSmallestInteger (inputArray) {
+    let referenceArray = inputArray.slice(0);
+    let elementCount = -1;
+    while(referenceArray != 0){
+        let smallestInteger = findSmallestInteger(referenceArray);
+        for(i=0;i<=inputArray.length - 1;i++){
+            if(inputArray[i] === smallestInteger){
+                elementCount++
+                let integerToSwap = inputArray[i];
+                let integerBeingSwapped = inputArray[elementCount];
+                inputArray[elementCount] = integerToSwap;
+                inputArray[i] = integerBeingSwapped;
+                console.log(inputArray);
+            };
+        };
+    };
 };
 
 function findSmallestInteger (referenceArray) {
@@ -15,25 +33,9 @@ function findSmallestInteger (referenceArray) {
             referenceArray.splice(j,1);
         };
     };
+    console.log(smallestInteger);
     return smallestInteger;
 };
 
-function moveSmallestInteger (input) {
-    let referenceArray = input.slice(0);
-    let elementCount = -1;
-    while(referenceArray != 0){
-        let smallestInteger = findSmallestInteger(referenceArray);
-        for(i=0;i<=input.length - 1;i++){
-            if(input[i] === smallestInteger){
-                elementCount++
-                let integerToSwap = input[i];
-                let integerBeingSwapped = input[elementCount];
-                input[elementCount] = integerToSwap;
-                input[i] = integerBeingSwapped;
-            };
-        };
-    };
-};
-
-selectionSort(input);
-console.log("SORTED?:  " + input);
+selectionSort(inputArray);
+console.log("SORTED?:  " + inputArray);
