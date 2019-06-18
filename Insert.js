@@ -1,23 +1,15 @@
 let inputArray = [5,3,2,1,6,8,4,7,2,8,14,82];
 
-console.log(inputArray.length);
-
-function insertSort (inputArray) {
-    let orderedArray = [];
-    let leftMostInteger = getLeftMostInteger(inputArray);
-
-}
-
-function moveInteger (integerToMove, orderedArray) {
-    var orderedArrayLength = orderedArray.length - 1;
-    if(integerToMove > orderedArray[orderedArrayLength]){
-
+function insertionSort(inputArray){
+    for(i=1;i<inputArray.length;i++){ //iterates through inputArray
+        let valueToMove = inputArray[i]; //and selects the value to move.
+        let j = i - 1; //essentially the value to the left of the valueToMove
+        while(j >= 0 && inputArray[j] > valueToMove){ //all the time the value to the left of the value to move is greater
+            inputArray[j + 1] = inputArray[j]; //move the value before to the right (moving the "valueToMove to the left")
+            j = j - 1; //changes 'j' to the next number to the left 
+        }
+        inputArray[j + 1] = valueToMove; //once the valueToMove is bigger than the number to the left, set to value of "valueToMove".
     }
-};
-
-function getLeftMostInteger (inputArray) {
-    leftMostInteger = inputArray.shift();    
-    return leftMostInteger;
-};
-
-//insertSort(inputArray);
+    return inputArray;
+}
+console.log(insertionSort(inputArray));
