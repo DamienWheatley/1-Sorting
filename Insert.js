@@ -1,4 +1,4 @@
-let inputArray = [5,3,2,1,6,8,4,7,2,8,14,82];
+const generateList = require('./ListGenerator.js').generateList;
 
 function insertionSort(inputArray){
     for(i=1;i<inputArray.length;i++){ //iterates through inputArray
@@ -12,4 +12,4 @@ function insertionSort(inputArray){
     }
     return inputArray;
 }
-console.log(insertionSort(inputArray));
+console.log(insertionSort(generateList(10)));

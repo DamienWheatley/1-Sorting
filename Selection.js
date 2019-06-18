@@ -1,7 +1,4 @@
-//Hardcoded temporarily just to get it working.
-let inputArray = [5,3,2,1,6,8,4,7,2,8,82,14];
-
-console.log("UNSORTED: " + inputArray);
+const generateList = require('./ListGenerator.js').generateList;
 
 function selectionSort(inputArray) {
     let outputArray = [];
@@ -10,7 +7,7 @@ function selectionSort(inputArray) {
 		outputArray.push(popShortest(inputArray));
 	}
 	return outputArray;
-}
+};
 
 function popShortest(inputArray) {
 	let smallestIndex = 0;
@@ -27,8 +24,6 @@ function popShortest(inputArray) {
 	inputArray.splice(smallestIndex, 1);
 	// While returning the corresponding value ultimately for use in the output array
 	return smallestValue;
-}
+};
 
-let sortedArray = selectionSort(inputArray);
-
-console.log(sortedArray);
+console.log(selectionSort(generateList(10)));
