@@ -3,7 +3,7 @@ const timer = require('./Timer.js').timerClass;
 
 function mergeSort(inputArray) {
     if(inputArray.length === 1){
-        return inputArray; //already sorted, so do not need to complete.
+        return inputArray; //already sorted, so do not need to continue.
     };
 
     const middle = Math.floor(inputArray.length / 2); //find the middle of the array
