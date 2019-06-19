@@ -1,4 +1,5 @@
 const generateList = require('./ListGenerator.js').generateList;
+const timer = require('./Timer.js').timerClass;
 
 function selectionSort(inputArray) {
     let outputArray = [];
@@ -26,4 +27,9 @@ function popShortest(inputArray) {
 	return smallestValue;
 };
 
-console.log(selectionSort(generateList(10)));
+(function timeSelectionSort(){
+	let startTime = timer.prototype.getStartTime();
+	console.log(selectionSort(generateList(50000)));
+	let endTime = timer.prototype.getEndTime();
+	timer.prototype.timeTakenInMinutesSeconds(startTime,endTime);
+})();

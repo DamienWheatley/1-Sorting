@@ -18,7 +18,7 @@ let timer = class {
         milliseconds = 1000*Math.round(milliseconds/1000);
         let d = new Date(milliseconds);
     
-        console.log( d.getUTCMinutes() + ':' + d.getUTCSeconds());
+        console.log( d.getUTCMinutes() + ' minutes ' + d.getUTCSeconds() + " seconds");
     }; 
 };
 

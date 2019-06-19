@@ -31,9 +31,9 @@ function merge(left,right){
     return results.concat(left.slice(leftIndex)).concat(right.slice(rightIndex)); //once we've got to the end of the array we can just concatenate the remaining indexes to the end.
 };
 
-(function timeSort(){
+(function timeMergeSort(){
     let startTime = timer.prototype.getStartTime(); //Sets start time
-    console.log(mergeSort(generateList(5000000))); //Generates the list and sorts
+    console.log(mergeSort(generateList(500000))); //Generates the list and sorts
     let endTime = timer.prototype.getEndTime(); //Sets end time
     timer.prototype.timeTakenInMinutesSeconds(startTime,endTime); //deducts startTime from endTime and converts the result to minutes:seconds (only useful for longer numbers...but it's easier to read!)
 })();

@@ -1,6 +1,7 @@
 const generateList = require('./ListGenerator.js').generateList;
+const timer = require('./Timer.js').timerClass;
 
-function insertionSort(inputArray){
+function insertSort(inputArray){
     for(i=1;i<inputArray.length;i++){ //Iterates through inputArray ...
         let valueToMove = inputArray[i]; // ... and selects the value to move.
         let j = i - 1; //Selects the value to the left of the valueToMove
@@ -12,4 +13,10 @@ function insertionSort(inputArray){
     }
     return inputArray;
 }
-console.log(insertionSort(generateList(10)));
+
+(function timeInsertSort () {
+    let startTime = timer.prototype.getStartTime();
+    console.log(insertSort(generateList(100000)));
+    let endTime = timer.prototype.getEndTime();
+    timer.prototype.timeTakenInMinutesSeconds(startTime,endTime);
+})();
