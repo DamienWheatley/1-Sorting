@@ -1,0 +1,25 @@
+{
+  "name": "1sorting",
+  "version": "1.0.0",
+  "description": "",
+  "main": "insertSort.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DamienWheatley/1-Sorting.git"
+  },
+  "author": "Damien Wheatley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DamienWheatley/1-Sorting/issues"
+  },
+  "homepage": "https://github.com/DamienWheatley/1-Sorting#readme",
+  "dependencies": {
+    "mocha": "^6.1.4"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0"
+  }
+}

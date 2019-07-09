@@ -1,5 +1,5 @@
-const generateList = require('./ListGenerator.js').generateList;
-const timer = require('./Timer.js').timerClass;
+const generateList = require('./listGenerator.js').generateList;
+const timer = require('./timer.js').timerClass;
 
 function selectionSort(inputArray) {
     let outputArray = [];

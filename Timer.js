@@ -1,24 +1,20 @@
 let timer = class {
-    constructor(startTime,endTime,timeTaken){
-        this.startTime = startTime;
-        this.endTime = endTime;
-        this.timeTaken = timeTaken;
+    constructor(){
+        this.start = null;
+        this.end = null;
     }
 
-    getStartTime(){
-        let startTime = new Date().getTime();
-        return startTime;
+    setStart(){
+        this.start = new Date().getTime();
     };
-    getEndTime(){
-        let endTime = new Date().getTime();
-        return endTime;
+    setEnd(){
+        this.end = new Date().getTime();
     };
-    timeTakenInMinutesSeconds (startTime,endTime){
-        let milliseconds = endTime - startTime;
+    getStringReport(){
+        let milliseconds = this.end - this.start;
         milliseconds = 1000*Math.round(milliseconds/1000);
         let d = new Date(milliseconds);
-    
-        console.log( d.getUTCMinutes() + ' minutes ' + d.getUTCSeconds() + " seconds");
+        return d.getUTCMinutes() + ' minutes ' + d.getUTCSeconds() + " seconds";
     }; 
 };
 
